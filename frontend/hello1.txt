@@ -1,0 +1,1 @@
+Day 22: Scaffold (Vite + React + Tailwind), dark palette locked in, routing, Zustand stores, API client, protected routes ✅

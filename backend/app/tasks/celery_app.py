@@ -1,0 +1,24 @@
+import ssl
+
+from celery import Celery
+
+from app.config import settings
+
+celery_app = Celery(
+    "ai_interview_platform",
+    broker=settings.redis_url,
+    backend=settings.redis_url,
+)
+
+celery_app.conf.update(
+    task_serializer="json",
+    accept_content=["json"],
+    result_serializer="json",
+    timezone="UTC",
+    enable_utc=True,
+    broker_use_ssl={"ssl_cert_reqs": ssl.CERT_NONE},
+    redis_backend_use_ssl={"ssl_cert_reqs": ssl.CERT_NONE},
+)
+
+# Import task modules directly so the worker registers them
+import app.tasks.health_check_task  # noqa: E402, F401

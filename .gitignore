@@ -1,0 +1,39 @@
+# --- Python / Backend ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+*.db
+*.sqlite3
+.pytest_cache/
+celerybeat-schedule
+
+# --- Env files ---
+.env
+.env.local
+*.env
+!.env.example
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+build/
+.vite/
+*.local
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+logs/
+
+# --- Alembic ---
+backend/alembic/versions/__pycache__/
+*.wav
+*.mp3

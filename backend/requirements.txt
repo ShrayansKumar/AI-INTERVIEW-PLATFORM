@@ -1,0 +1,35 @@
+# --- Core framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# --- Settings / env ---
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+
+# --- Database ---
+sqlalchemy==2.0.36
+asyncpg==0.30.0
+psycopg2-binary==2.9.10
+alembic==1.14.0
+
+# --- Dev / testing ---
+pytest==8.3.4
+httpx==0.28.1
+
+pgvector==0.3.6
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+python-jose[cryptography]==3.3.0
+email-validator==2.2.0
+redis==5.2.1
+celery==5.4.0
+pymupdf==1.25.1
+cloudinary==1.41.0
+python-multipart==0.0.20
+langchain==0.3.13
+langchain-groq==0.2.1
+sentence-transformers==3.3.1
+langgraph==0.2.62
+groq==0.31.1
+reportlab==4.2.5

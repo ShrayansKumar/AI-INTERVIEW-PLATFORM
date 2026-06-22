@@ -1,0 +1,36 @@
+Day 1 — Backend foundations
+Scaffolded the full project folder structure (frontend + backend + docs + infra) per the spec, zipped and downloaded.
+Created a conda environment (backend, Python 3.12).
+Wrote and installed requirements.txt (FastAPI, SQLAlchemy, asyncpg, psycopg2-binary, alembic, pydantic-settings, pytest, httpx).
+Wrote app/config.py (settings loader from .env).
+Wrote app/db/session.py (async SQLAlchemy engine + session).
+Wrote app/db/base.py (declarative base for models).
+Wrote app/main.py with a /health endpoint that checks DB connectivity.
+Got uvicorn running successfully.
+
+ Day 2
+ Defined all 7 SQLAlchemy models matching Section 9 of the spec exactly
+Set up Alembic with a sync DB URL (separate from the async one the app uses)
+
+Day 3: Full auth system (register/login/JWT/protected routes) ✅
+Day 4: Redis + Celery background job pipeline ✅
+Day 6: Resume upload + PDF extraction ✅
+Day 7 is next: feeding this extracted resume text into an LLM (via LangChain) to structure it into clean JSON
+Day 8: Embedding pipeline + seeded Amazon knowledge base ✅
+Day 9 is next: building the actual retrieval side — retrieval_service.py, which takes a query (e.g. "Amazon DSA") and uses pgvector's similarity search to pull back the most relevant chunks from what you just seeded.
+Day 11 this is where LangGraph actually enters: defining app/agents/state.py (the shared state object that flows between all 6 agents) and app/agents/graph_builder.py (the skeleton that will wire them together).
+Day 12 is next: adding Agent 2 — Question Generator, which takes the structured resume data (just proven working) plus RAG-retrieved company context (also proven working in Day 9) and produces personalized interview questions
+Day 13 is next: Agent 3 — Interview Agent, which manages the actual conversation loop — asking questions one at a time, accepting a simulated answer, and generating contextual follow-up questions
+Day 14 Evaluation Agent ✅
+Day 15 is next: building the final two agents (Feedback & Report), then wiring all 6 into one complete graph with the right edges and flow:
+Day 16: Real /interview/start + /interview/answer turn-by-turn API routes (replacing the test endpoints with production-ready routes that store sessions in DB)
+Day 18 is complete — Groq Whisper STT integrated, tested, and working well enough for real use
+Day 19 - TTS (Groq Orpheus) — all verified working.
+Day 20 is next: wiring STT and TTS together with your existing /interview/start and /interview/answer 
+Days 27-28: Admin routes, PDF report generator, user memory persistence
+Day 22: Scaffold (Vite + React + Tailwind), dark palette locked in, routing, Zustand stores, API client, protected routes ✅
+Day 23: Real auth (Login/Register), dashboard shell with sidebar ✅
+Day 24 — resume upload page and company selection, the two screens between login and starting an actual interview.
+Day 25: Full voice interview room ✅
+Day 26 — the report page and dashboard charts. Let's check what charting library makes sense first, since we haven't installed one yet
+report/a2f5093b-ce43-47d8-9db1-9f097067fff4
